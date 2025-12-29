@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Ideal Weight Calculator | Calculate Your Healthy Weight by Height & Gender</title>
+  <meta name="description" content="Free ideal weight calculator to estimate your healthy body weight based on height and gender. Simple, fast, and accurate.">
+  <meta name="keywords" content="ideal weight calculator, healthy weight calculator, ideal body weight, weight by height">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+
+  <!-- Canonical (change after publishing) -->
+  <link rel="canonical" href="https://YOURDOMAIN.com/ideal-weight.html">
+
+  <style>
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:#f6f7fb;
+      color:#333;
+    }
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:40px 20px
+    }
+    a.back{
+      display:inline-block;
+      margin-bottom:15px;
+      color:#2563eb;
+      text-decoration:none;
+      font-weight:600
+    }
+    h1{
+      color:#22c55e;
+      margin-bottom:10px
+    }
+    .intro{
+      color:#555;
+      margin-bottom:25px;
+      line-height:1.7
+    }
+    .card{
+      background:#fff;
+      padding:30px;
+      border-radius:22px;
+      box-shadow:0 12px 35px rgba(0,0,0,.08)
+    }
+    input,select,button{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      font-size:16px
+    }
+    input,select{
+      border:1px solid #ddd;
+      margin-bottom:20px
+    }
+    button{
+      border:none;
+      background:linear-gradient(90deg,#86efac,#22c55e);
+      color:#fff;
+      cursor:pointer;
+      font-weight:600
+    }
+    .result{
+      margin-top:20px;
+      background:#dcfce7;
+      padding:20px;
+      border-radius:14px;
+      display:none;
+      text-align:center;
+      font-size:18px
+    }
+    .ad{
+      border:2px dashed #ddd;
+      padding:40px;
+      text-align:center;
+      color:#aaa;
+      border-radius:16px;
+      margin:30px 0;
+      background:#fff
+    }
+    .links{
+      margin-top:35px;
+      text-align:center
+    }
+    .links a{
+      margin:0 6px;
+      color:#2563eb;
+      text-decoration:none;
+      font-weight:600
+    }
+    footer{
+      text-align:center;
+      margin-top:50px;
+      color:#666;
+      font-size:14px
+    }
+    footer a{
+      color:#2563eb;
+      text-decoration:none;
+      margin:0 6px
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Navigation -->
+  <a href="index.html" class="back">← Back to Home</a>
+
+  <!-- Main Heading -->
+  <h1>Ideal Weight Calculator</h1>
+
+  <!-- SEO Text -->
+  <p class="intro">
+    Use this ideal weight calculator to estimate your healthy body weight based
+    on your height and gender. This tool provides a quick and simple guideline
+    for maintaining a healthy weight.
+  </p>
+
+  <!-- Ad -->
+  <div class="ad">Advertisement Space</div>
+
+  <!-- Calculator -->
+  <div class="card">
+    <label for="h">Height (cm)</label>
+    <input id="h" type="number" placeholder="170">
+
+    <label for="g">Gender</label>
+    <select id="g">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+
+    <button onclick="calc()">Calculate Ideal Weight</button>
+    <div id="r" class="result"></div>
+  </div>
+
+  <!-- Ad -->
+  <div class="ad">Advertisement Space</div>
+
+  <!-- Internal links -->
+  <div class="links">
+    <h3>Other Health Calculators</h3>
+    <a href="age.html">Age Calculator</a> |
+    <a href="calorie.html">Calorie Calculator</a> |
+    <a href="pregnancy.html">Pregnancy Calculator</a> |
+    <a href="hijri.html">Hijri Date Converter</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Use</a> |
+    <a href="ar/ideal-weight.html">العربية</a>
+    <p>© 2025 Health Calculators. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script>
+function calc(){
+  const h=document.getElementById("h").value/100;
+  const g=document.getElementById("g").value;
+  let w=(g==="m")? (22*h*h):(21*h*h);
+  document.getElementById("r").style.display="block";
+  document.getElementById("r").innerHTML=
+    `<strong>Your Ideal Weight:</strong><br>${w.toFixed(1)} kg`;
+}
+</script>
+</body>
+</html>

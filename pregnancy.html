@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pregnancy Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:system-ui;background:#f6f7fb}
+.container{max-width:900px;margin:auto;padding:40px 20px}
+a{color:#3b82f6;text-decoration:none}
+h1{color:#ec4899}
+.card{background:#fff;padding:30px;border-radius:22px;box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.ad{border:2px dashed #ddd;padding:40px;text-align:center;color:#aaa;border-radius:16px;margin:30px 0}
+input,button{width:100%;padding:14px;font-size:16px;border-radius:12px}
+input{border:1px solid #ddd;margin-bottom:20px}
+button{border:none;background:linear-gradient(90deg,#f9a8d4,#ec4899);color:#fff}
+.result{margin-top:20px;background:#fff1f2;padding:20px;border-radius:14px;display:none}
+footer{text-align:center;margin-top:50px;color:#888}
+</style>
+</head>
+
+<body>
+<div class="container">
+<a href="index.html">← Back to Home</a>
+<h1>Pregnancy Calculator</h1>
+
+<div class="ad">Advertisement Space</div>
+
+<div class="card">
+<label>First day of your last menstrual period (LMP):</label>
+<input type="date" id="lmp">
+<button onclick="calc()">Calculate</button>
+<div class="result" id="res"></div>
+</div>
+
+<div class="ad">Advertisement Space</div>
+<footer>© 2025 Health Calculators</footer>
+</div>
+
+<script>
+function calc(){
+const lmp=new Date(document.getElementById("lmp").value);
+if(!lmp){alert("Select date");return}
+const due=new Date(lmp);
+due.setDate(due.getDate()+280);
+document.getElementById("res").style.display="block";
+document.getElementById("res").innerHTML=
+`<b>Estimated Due Date:</b><br>${due.toDateString()}`;
+}
+</script>
+</body>
+</html>
